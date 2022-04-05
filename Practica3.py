@@ -108,7 +108,15 @@ for i in range(len(fileNameList)):
         #Area de blob
         print(handNames[j] + " Blob Area: " + str(imagesList[j][0]))
         #ShowImage:
-        showImage(imageName,imagesList[j][1]) 
+        showImage(imageName,imagesList[j][1])
+        if (imageName == "Peace"):
+            peacePath = path + "handDetected_Peace.png"
+            cv2.imwrite(peacePath, imagesList[j][1])
+        elif (imageName == "Closed"):
+            closePath = path + "handDetected_Closed.png"
+            cv2.imwrite(closePath, imagesList[j][1])
+
+ 
 
         
 
