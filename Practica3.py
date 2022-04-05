@@ -102,15 +102,14 @@ for i in range(len(fileNameList)):
     # Sort list from largest to smallest first element of each tuple:
     imagesList = sorted(imagesList, key=lambda tup: tup[0], reverse=True) 
     handNames = ["Peace", "Closed"]
-    for j in imagesList:
-        if j[0]!=13934.5:
-            showImage(handNames[1],j[1])
-            closePath = path + "handDetected_Closed.png"
-            cv2.imwrite(closePath,j[1])
-        else:
-            showImage(handNames[0],j[1])
-            peacePath = path + "handDetected_Peace.png"
-            cv2.imwrite(peacePath,j[1])
+    for j in range(len(imagesList)):
+        #Nombre de la imagen:
+        imageName = handNames[j]
+        #Area de blob
+        print(handNames[j] + " Blob Area: " + str(imagesList[j][0]))
+        #ShowImage:
+        showImage(imageName,imagesList[j][1]) 
+
         
 
 
