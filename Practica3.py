@@ -42,7 +42,7 @@ for i in range(len(fileNameList)):
     # Read image:
     inputImage = readImage(path+fileName)
     # Show Image:
-    showImage("Input Image", inputImage)
+    showImage("Input Image: "+fileName, inputImage)
     
 
     #Parte 2: Segmentando las manos
@@ -107,8 +107,9 @@ for i in range(len(fileNameList)):
         imageName = handNames[j]
         #Area de blob
         print(handNames[j] + " Blob Area: " + str(imagesList[j][0]))
-        #ShowImage:
+        
         showImage(imageName,imagesList[j][1])
+        #Write Image
         if (imageName == "Peace"):
             peacePath = path + "handDetected_Peace.png"
             cv2.imwrite(peacePath, imagesList[j][1])
